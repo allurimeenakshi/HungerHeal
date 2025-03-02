@@ -1,0 +1,110 @@
+/* Scope all styles under .header-container */
+.header-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Container */
+.header-container {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+/* Navbar Styling */
+.header-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Logo and Title */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.header-logo h2 {
+    color: #333;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Links */
+.header-nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header-nav-links li {
+    display: inline-block;
+}
+
+.header-nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.header-nav-links a:hover {
+    background-color: #f0f0f0;
+    color: #ff6347;
+}
+
+/* Sign In Button */
+.header-signin-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.header-signin-btn:hover {
+    background-color: #e5533d;
+    transform: translateY(-3px);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-navbar {
+        flex-direction: column;
+    }
+    
+    .header-nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .header-nav-links a {
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+}
