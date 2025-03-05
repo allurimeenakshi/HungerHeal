@@ -1,3 +1,131 @@
-h1{
+.donate-food-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff5e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.message {
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.donate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.donate-form input,
+.donate-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e67e22;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.donate-form input:focus,
+.donate-form textarea:focus {
+    border-color: #d35400;
+    box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+}
+
+.file-input {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.submit-button {
+    background: #e67e22;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background: #d35400;
+    transform: scale(1.05);
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.donation-list {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.donation-card {
+    background: #ffebd6;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 12px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.donation-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.food-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.status {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.pending {
+    color: #e67e22;
+}
+
+.completed {
+    color: #27ae60;
+}
+
+.no-donations {
+    color: gray;
+    font-style: italic;
+    text-align: center;
 }
