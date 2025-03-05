@@ -1,0 +1,59 @@
+/* Apply a box-sizing rule to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Set a background color and ensure the content is centered */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* A container class to wrap main content and prevent elements from sticking to the edges */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Set a common styling for headers */
+h1, h2, h3 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Add spacing for buttons and links */
+button, a {
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Ensure forms and inputs are well-spaced */
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Ensure consistent spacing for sections */
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}

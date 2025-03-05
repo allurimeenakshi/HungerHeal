@@ -1,3 +1,18 @@
-h2{
-    text-align : center;
+/* Footer Styling */
+.footer {
+    width: 100%;
+    background: linear-gradient(to right, #ff7f50, #ff6347); /* Matching header colors */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; /* Prevents overlap issues */
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer-text {
+    font-size: 1.5rem; /* Slightly increased for better readability */
+    font-family: 'Lucida Sans', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans Regular', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase; /* Enhances visibility */
+    letter-spacing: 1px; /* Improves spacing for a clean look */
 }
