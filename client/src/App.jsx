@@ -8,6 +8,9 @@ import Feedback from "./components/feedback/Feedback.jsx"
 import DonateFood from "./components/donate-food/DonateFood.jsx"
 import RequestFood from "./components/request-food/RequestFood.jsx"
 import Track from './components/track/track.jsx';
+import Login from './components/login/Login.jsx';
+import Register from './components/register/Register.jsx';
+import Auth from './components/auth/Auth.jsx';
 
 import "./App.css"
 
@@ -46,6 +49,18 @@ function App() {
         {
           path: '/track',
           element: <Track />,
+        },
+        {
+          path: '/login',
+          element: <Login />,
+        },
+        {
+          path: '/register',
+          element: <Register />,
+        },
+        {
+          path: '/auth',
+          element: <Auth />,
         }
       ],
     },

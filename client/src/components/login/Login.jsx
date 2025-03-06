@@ -1,41 +1,55 @@
-import  {userLoginContext} from "../../contexts/userLoginContext";
-import { useForm } from "react-hook-form";
-import { useContext } from "react";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import "./login.css";
 
-function Login() {
-  const { loginUser, userLoginStatus, err } = useContext(userLoginContext);
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const navigate = useNavigate();
+const Login = () => {
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
 
-  function userLogin(userCred) {
-    loginUser(userCred);
-  }
+  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    if (userLoginStatus === true) {
-      navigate("/user-profile");
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/login", formData);
+      setMessage(response.data.message);
+      localStorage.setItem("token", response.data.token);
+    } catch (error) {
+      setMessage(error.response?.data?.message || "Login failed");
     }
-  }, [userLoginStatus]);
+  };
 
   return (
-    <form className="auth-form" onSubmit={handleSubmit(userLogin)}>
-      <h3 className="text-center fs-4">Login</h3>
-      {err.length !== 0 && <p className="error text-center text-danger">{err}</p>}
-      <div>
-        <label>Username</label>
-        <input type="text" {...register("username", { required: true })} />
-        {errors.username && <span className="error">*This field is required</span>}
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" {...register("password", { required: true })} />
-        {errors.password && <span className="error">*This field is required</span>}
-      </div>
-      <button type="submit" className="btn">Login</button>
-    </form>
+    <div className="login-container">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      {message && <p className="message">{message}</p>}
+    </div>
   );
-}
+};
 
 export default Login;

@@ -1,0 +1,61 @@
+.feedback-container {
+    max-width: 500px; /* Decreased maximum width */
+    margin: 20px auto; /* Added margin around the container */
+    padding: 15px; /* Reduced padding */
+    border: 1px solid #e0a96d; /* Light orange border */
+    border-radius: 6px; /* Slightly less rounded corners */
+    background-color: #fff3e6; /* Light orange background */
+    box-shadow: 0 2px 8px rgba(255, 165, 0, 0.2); /* Subtle orange shadow */
+}
+
+h1 {
+    text-align: center; /* Center the heading */
+    color: #cc6700; /* Darker orange for heading */
+}
+
+form {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    margin-bottom: 12px; /* Reduced space between inputs */
+    padding: 8px; /* Reduced padding */
+    border: 1px solid #e0a96d; /* Light orange border */
+    border-radius: 3px; /* Slightly less rounded corners */
+    font-size: 14px; /* Slightly smaller font size */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+textarea {
+    height: 120px; /* Reduced height for textarea */
+    resize: none; /* Disable resizing */
+}
+
+button {
+    padding: 6px; /* Smaller padding inside the button */
+    background-color: #ff9800; /* Orange color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 3px; /* Slightly less rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 13px; /* Slightly smaller font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    width: 90px; /* Smaller button width */
+    align-self: center; /* Center the button */
+}
+
+button:hover {
+    background-color: #e68900; /* Darker orange on hover */
+}
+
+.thank-you-message {
+    text-align: center; /* Center the thank you message */
+    color: #d47400; /* Warm orange color for the message */
+    font-size: 16px; /* Slightly smaller font size */
+    margin-top: 10px; /* Added margin for spacing */
+}
+

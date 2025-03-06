@@ -18,7 +18,7 @@ function Header() {
                     <li><Link to="request-food">Request Food</Link></li>
                     <li><Link to="track">Track</Link></li>
                     <li><Link to="feedback">Feedback</Link></li>
-                    <li><Link to='/signin' className='header-signin-btn'>Sign In</Link></li>
+                    <li><Link to='auth' className='header-signin-btn'>Register/Login</Link></li>
                 </ul>
             </nav>
         </header>

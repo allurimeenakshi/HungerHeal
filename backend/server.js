@@ -7,11 +7,9 @@ require('dotenv').config();
 
 // Middleware
 const cors = require('cors');
-const allowedOrigins = [
-    'http://localhost:5173',   
-  ];
-  
-  app.use(cors({
+const allowedOrigins = ['http://localhost:5173'];
+
+app.use(cors({
     origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
     credentials: true,
@@ -33,17 +31,16 @@ mongoclient.connect().then((connectionObj) => {
     // Connect to collections
     const usersCollection = db.collection('users');
 
-    // Share collection objects with the API
+    // Share collection objects with the APIs
     app.set('usersCollection', usersCollection);
-    
 
-    // Start the HTTP server if DB connection has succeeded
-    app.listen(process.env.PORT, () => console.log("HTTP server started at port 4000"));
+    // Start the HTTP server if DB connection succeeds
+    app.listen(process.env.PORT, () => console.log(`HTTP server started at port ${process.env.PORT}`));
 }).catch((err) => {
     console.log("Error in DB Connection : ", err);
 });
 
-// Import userApp
+// Import APIs
 const userApp = require('./APIs/userAPI');
 app.use('/user-api', userApp);
 
