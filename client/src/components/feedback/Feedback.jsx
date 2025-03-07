@@ -19,16 +19,17 @@ const Feedback = () => {
     };
 
     return (
-        <div className="feedback-container">
-            <h1>Feedback Form</h1>
+        <div className="feedback-form-container">
+            <h1 className="feedback-form-title">Feedback Form</h1>
             {submitted ? (
                 <div className="thank-you-message">
                     Thank you for your feedback!
                 </div>
             ) : (
-                <form onSubmit={handleSubmit}>
+                <form className="feedback-form" onSubmit={handleSubmit}>
                     <input
                         type="text"
+                        className="feedback-input"
                         placeholder="Your Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -36,18 +37,22 @@ const Feedback = () => {
                     />
                     <input
                         type="email"
+                        className="feedback-input"
                         placeholder="Your Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                     <textarea
+                        className="feedback-textarea"
                         placeholder="Your Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
                     />
-                    <button type="submit">Submit Feedback</button>
+                    <button type="submit" className="feedback-submit-button">
+                        Submit Feedback
+                    </button>
                 </form>
             )}
         </div>
