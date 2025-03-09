@@ -126,6 +126,6 @@ body {
 
     .button-group {
         flex-direction: column;
-        gap: 15px;
-    }
+        gap: 15px; /* Fixed the non-standard space character */
+    }
 }
