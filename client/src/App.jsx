@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/home/home.jsx";
+import Home from "./components/home/Home.jsx";
 import RootLayout from './RootLayout';
 import About from "./components/about/about.jsx";
 import Feedback from "./components/feedback/Feedback.jsx"

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; // Import axios for API calls
 import './Auth.css';
+import loginAnimation from '../../assets/login-animation.json';
+
 
 const Auth = () => {
     const [isRegister, setIsRegister] = useState(false);
