@@ -1,25 +1,131 @@
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #fffaf0, #ffcc80); /* Light cream to soft orange */
+    margin: 0;
+    padding: 0;
+}
+
 /* Home Container */
 .home-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    background-color: #fff;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 8%;
 }
 
-/* Large Image */
+/* Increased Logo Size */
 .home-logo {
-    width: 500px; /* Further increased image size */
+    width: 500px; /* Increased size */
     height: auto;
-    margin-right: 35px; /* More space between image and text */
 }
 
-/* Project Title Styling */
+/* Text Content */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 550px;
+}
+
+/* HungerHeal Title */
 .home-title {
-    font-size: 4.5rem; /* Increased font size */
-    font-family: 'Lucida Sans', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans Regular', sans-serif; /* Elegant and readable font */
-    color: #ff4500; /* Deep orange-red for strong impact */
-    font-weight: 800;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #e65100;
     text-transform: uppercase;
+    display: flex;
+    gap: 5px;
+}
+
+/* Letter Animation */
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delayed Animation */
+.letter:nth-child(1) { animation-delay: 0s; }
+.letter:nth-child(2) { animation-delay: 0.1s; }
+.letter:nth-child(3) { animation-delay: 0.2s; }
+.letter:nth-child(4) { animation-delay: 0.3s; }
+.letter:nth-child(5) { animation-delay: 0.4s; }
+.letter:nth-child(6) { animation-delay: 0.5s; }
+.letter:nth-child(7) { animation-delay: 0.6s; }
+.letter:nth-child(8) { animation-delay: 0.7s; }
+.letter:nth-child(9) { animation-delay: 0.8s; }
+
+/* Quote Styling */
+.home-quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #ff7043;
+    margin-top: 15px;
+}
+
+/* Button Group */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Fixed-Size Buttons */
+.donate-btn, .request-btn {
+    background-color: #ff9800;
+    color: white;
+    width: 180px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donate-btn:hover, .request-btn:hover {
+    background-color: #e65100;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-logo {
+        width: 380px; /* Adjusted for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .home-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
