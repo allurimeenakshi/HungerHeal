@@ -1,7 +1,7 @@
 import React from "react";
-import "./Home.css";
-import logo from "../../assets/Homebanner-hh.png"
-import { Link } from "react-router-dom";
+import "./home.css";
+import logo from "../../assets/Homebanner.png";
+
 
 
 const Home = () => {
@@ -26,8 +26,8 @@ const Home = () => {
 
         {/* Buttons Below the Quote */}
         <div className="button-group">
-          <button className="donate-btn"><Link to="donate-food">Donate Food</Link></button>
-          <button className="request-btn"><Link to="request-food">Request Meal</Link></button>
+          <button className="donate-btn">Donate Food</button>
+          <button className="request-btn">Request Meal</button>
         </div>
       </div>
     </div>
