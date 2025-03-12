@@ -4,18 +4,18 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #ffcc80, #ff7043);
+    background: linear-gradient(to bottom, #fffaf0, #ffcc80); /* Light cream to soft orange */
 }
 
 .request-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #fff;
+    color: #b76f30;
 }
 
 .request-subtitle {
     font-size: 1.2rem;
-    color: #fff;
+    color: #9f652f;
     margin-bottom: 20px;
 }
 
