@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home.jsx";
 import RootLayout from './RootLayout';
 import About from "./components/about/about.jsx";
@@ -10,8 +10,7 @@ import RequestFood from "./components/request-food/RequestFood.jsx"
 import Track from './components/track/track.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
-import Auth from './components/auth/Auth.jsx';
-
+import Auth from "./components/register/Auth.jsx";
 import "./App.css"
 
 
@@ -28,6 +27,10 @@ function App() {
       children: [
         {
           path: '/',
+          element: <Home />, // Ensure Home component exists
+        },
+        {
+          path: '/home',
           element: <Home />, // Ensure Home component exists
         },
         {

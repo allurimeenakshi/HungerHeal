@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./RequestFood.css";
 
 const RequestFood = () => {
@@ -22,44 +22,48 @@ const RequestFood = () => {
 
   return (
     <div className="request-container">
-      <h1 className="request-title">Request Food</h1>
-      <p className="request-subtitle">Fill in the details to request food assistance.</p>
+      <div className="request-card">
+        <h2 className="request-title">Request Food Assistance</h2>
+        <p className="request-subtitle">
+          Fill in the details below, and we’ll help connect you with available food resources.
+        </p>
 
-      <form onSubmit={handleSubmit} className="request-form">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="tel"
-          name="contact"
-          placeholder="Contact Number"
-          value={formData.contact}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Your Location"
-          value={formData.location}
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="reason"
-          placeholder="Reason for Requesting Food"
-          value={formData.reason}
-          onChange={handleChange}
-          required
-        ></textarea>
-        
-        <button type="submit" className="submit-btn">Submit Request</button>
-      </form>
+        <form onSubmit={handleSubmit} className="request-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="tel"
+            name="contact"
+            placeholder="Contact Number"
+            value={formData.contact}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="location"
+            placeholder="Location (City, Area)"
+            value={formData.location}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            name="reason"
+            placeholder="Reason for requesting food"
+            value={formData.reason}
+            onChange={handleChange}
+            required
+          ></textarea>
+
+          <button type="submit" className="submit-btn">Submit Request</button>
+        </form>
+      </div>
     </div>
   );
 };
