@@ -1,16 +1,11 @@
 .donate-food-container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     background: #fff5e6;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
 }
 
 .title {
@@ -33,6 +28,7 @@
     gap: 12px;
     width: 100%;
     max-width: 400px;
+    margin: auto;
 }
 
 .donate-form input,
@@ -44,17 +40,6 @@
     font-size: 16px;
     outline: none;
     transition: 0.3s;
-}
-
-.donate-form input:focus,
-.donate-form textarea:focus {
-    border-color: #d35400;
-    box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
-}
-
-.file-input {
-    cursor: pointer;
-    padding: 8px;
 }
 
 .submit-button {
@@ -73,17 +58,21 @@
     transform: scale(1.05);
 }
 
-.subtitle {
-    margin-top: 20px;
-    font-size: 22px;
+.donation-heading {
+    margin-top: 30px;
+    font-size: 24px;
     color: #e67e22;
     font-weight: bold;
+    text-align: center;
 }
 
 .donation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    justify-content: center;
     margin-top: 15px;
-    width: 100%;
-    max-width: 500px;
+    padding: 0 10px;
 }
 
 .donation-card {
@@ -92,23 +81,12 @@
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
-    margin-top: 12px;
     transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .donation-card:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.food-image {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
 }
 
 .status {
@@ -127,5 +105,12 @@
 .no-donations {
     color: gray;
     font-style: italic;
-    text-align: center;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .donation-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
