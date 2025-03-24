@@ -17,7 +17,6 @@ function DonateFood() {
         try {
             const response = await fetch("http://localhost:5000/donate-api/donations");
             if (!response.ok) throw new Error("Failed to fetch donations");
-
             const data = await response.json();
             setDonations(data);
         } catch (error) {
@@ -57,11 +56,11 @@ function DonateFood() {
     };
 
     return (
-        <div className="donate-food-container">
-            <h1 className="title">Donate Food</h1>
-            {message && <p className="message">{message}</p>}
-
-            <div className="donation-form-card">
+        <div className="donate-food-page">
+            {/* Donation Form Section */}
+            <div className="donate-food-container">
+                <h2 className="title">Donate Food</h2>
+                {message && <p className="message">{message}</p>}
                 <form className="donate-form" onSubmit={handleSubmit}>
                     <input type="text" placeholder="Food Name" value={foodName} onChange={(e) => setFoodName(e.target.value)} />
                     <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
@@ -71,33 +70,23 @@ function DonateFood() {
                 </form>
             </div>
 
+            {/* Past Donations Section */}
             <h2 className="donation-heading">Past Donations</h2>
             <div className="donation-list">
                 {donations.length === 0 ? (
                     <p className="no-donations">No donations made yet.</p>
                 ) : (
-                    <table className="donation-table">
-                        <thead>
-                            <tr>
-                                <th>Food Name</th>
-                                <th>Quantity</th>
-                                <th>Expiry Date</th>
-                                <th>Pickup Address</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {donations.map((donation) => (
-                                <tr key={donation._id}>
-                                    <td>{donation.foodName}</td>
-                                    <td>{donation.quantity}</td>
-                                    <td>{donation.expiryDate}</td>
-                                    <td>{donation.pickupAddress}</td>
-                                    <td className={`status ${donation.status.toLowerCase()}`}>{donation.status}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    donations.map((donation) => (
+                        <div key={donation._id} className="donation-card">
+                            <h3>{donation.foodName}</h3>
+                            <p><strong>Quantity:</strong> {donation.quantity}</p>
+                            <p><strong>Expiry Date:</strong> {donation.expiryDate}</p>
+                            <p><strong>Pickup Address:</strong> {donation.pickupAddress}</p>
+                            <p className={`status ${donation.status.toLowerCase()}`}>
+                                <strong>Status:</strong> {donation.status}
+                            </p>
+                        </div>
+                    ))
                 )}
             </div>
         </div>
