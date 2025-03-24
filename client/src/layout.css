@@ -1,0 +1,19 @@
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Ensure sections stack properly */
+#home, #about {
+    width: 100%;
+    min-height: 100vh; /* Each section takes full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}

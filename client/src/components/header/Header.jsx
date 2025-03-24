@@ -13,7 +13,6 @@ function Header() {
                 </div>
                 <ul className='header-nav-links'>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="about">About</Link></li>
                     <li><Link to="donate-food">Donate Food</Link></li>
                     <li><Link to="request-food">Request Food</Link></li>
                     <li><Link to="track">Track</Link></li>
