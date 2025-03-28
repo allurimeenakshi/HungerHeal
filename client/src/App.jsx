@@ -4,6 +4,7 @@ import RootLayout from './RootLayout';
 import Feedback from "./components/feedback/Feedback.jsx";
 import DonateFood from "./components/donate-food/DonateFood.jsx";
 import RequestFood from "./components/request-food/RequestFood.jsx";
+import UserProfile from "./components/user-profile/UserProfile.jsx";
 import Track from './components/track/track.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
@@ -28,7 +29,8 @@ function App() {
         { path: "/track", element: <Track /> },
         { path: "/login", element: <Login /> },
         { path: "/register", element: <Register /> },
-        { path: "/auth", element: <Auth /> }
+        { path: "/auth", element: <Auth /> },
+        { path: "/user-profile", element: <UserProfile /> },
       ],
     },
   ]);

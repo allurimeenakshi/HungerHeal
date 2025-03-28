@@ -5,14 +5,14 @@
     padding: 20px;
   }
   
-  /* Feedback Form Container */
   .feedback-form-container {
+    max-width: 500px; /* Decreased from full width */
     background: #f5f5f5;
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
     text-align: center;
-    margin-bottom: 30px;
+    margin: 20px auto; /* Centered with adjusted margin */
   }
   
   .feedback-form {
@@ -31,7 +31,7 @@
   }
   
   .feedback-form button {
-    background-color: #28a745;
+    background-color: #a75f28;
     color: white;
     padding: 10px;
     border: none;
@@ -41,11 +41,11 @@
   }
   
   .feedback-form button:hover {
-    background-color: #218838;
+    background-color: #955d09;
   }
   
   .response-message {
-    color: green;
+    color: rgb(140, 116, 43);
     font-weight: bold;
   }
   
@@ -71,29 +71,39 @@
     justify-content: center;
   }
   
-  .feedback-card {
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .feedback-header {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-  }
-  
-  .feedback-email {
-    font-size: 0.85rem;
-    color: #555;
-  }
-  
-  .feedback-message {
-    margin-top: 10px;
-    font-size: 14px;
-  }
+ /* Feedback Card Layout - Each Element on a New Line */
+.feedback-card {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Name should be first */
+.feedback-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Email should be under the name */
+.feedback-email {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Feedback message should be at the bottom */
+.feedback-message {
+  font-size: 14px;
+  display: block;
+}
+
   
   /* Responsive - Adjusts to 2 cards per row on smaller screens */
   @media (max-width: 768px) {

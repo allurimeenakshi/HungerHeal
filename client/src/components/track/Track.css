@@ -1,3 +1,29 @@
-track.h1{
-    text-align: center;
+/* Wrapper for input and map */
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Search Input */
+#pac-input {
+  width: 300px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Map Box */
+#map {
+  height: 400px;
+  width: 100%;
+  max-width: 800px; /* Keeps it responsive */
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }

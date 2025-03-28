@@ -18,6 +18,7 @@ const RequestFood = () => {
 
   const [requestsList, setRequestsList] = useState([]);
   const [responseMessage, setResponseMessage] = useState("");
+  const [showForm, setShowForm] = useState(false); // Toggle state for form visibility
 
   useEffect(() => {
     loadRequests();
@@ -50,6 +51,7 @@ const RequestFood = () => {
 
       setResponseMessage("Your food request has been successfully submitted!");
       loadRequests();
+      setShowForm(false); // Hide form after submission
     } catch (error) {
       setResponseMessage("Error submitting your request.");
       console.error("Error:", error);
@@ -72,46 +74,52 @@ const RequestFood = () => {
 
   return (
     <div className="request-food-page">
-      <div className="request-food-container">
-        <h1 className="form-heading">Request Food Assistance</h1>
-        {responseMessage && <p className="response-message">{responseMessage}</p>}
+      <button className="toggle-form-btn" onClick={() => setShowForm(!showForm)}>
+        {showForm ? "Close Request Form" : "Request Food"}
+      </button>
 
-        <form className="food-request-form" onSubmit={handleFormSubmit}>
-          <div className="input-group">
-            <input type="text" name="fullName" placeholder="Full Name" value={requestDetails.fullName} onChange={handleInputChange} required />
-            <input type="tel" name="contactNumber" placeholder="Contact Number" value={requestDetails.contactNumber} onChange={handleInputChange} required />
-            <input type="email" name="emailAddress" placeholder="Email Address" value={requestDetails.emailAddress} onChange={handleInputChange} required />
-          </div>
+      {showForm && (
+        <div className="request-food-container">
+          <h1 className="form-heading">Request Food Assistance</h1>
+          {responseMessage && <p className="response-message">{responseMessage}</p>}
 
-          <div className="input-group">
-            <input type="text" name="streetAddress" placeholder="Street Address" value={requestDetails.streetAddress} onChange={handleInputChange} required />
-            <input type="text" name="city" placeholder="City" value={requestDetails.city} onChange={handleInputChange} required />
-            <input type="text" name="postalCode" placeholder="Postal Code" value={requestDetails.postalCode} onChange={handleInputChange} required />
-          </div>
+          <form className="food-request-form" onSubmit={handleFormSubmit}>
+            <div className="input-group">
+              <input type="text" name="fullName" placeholder="Full Name" value={requestDetails.fullName} onChange={handleInputChange} required />
+              <input type="tel" name="contactNumber" placeholder="Contact Number" value={requestDetails.contactNumber} onChange={handleInputChange} required />
+              <input type="email" name="emailAddress" placeholder="Email Address" value={requestDetails.emailAddress} onChange={handleInputChange} required />
+            </div>
 
-          <div className="input-group">
-            <input type="number" name="numberOfPeople" placeholder="Number of People" value={requestDetails.numberOfPeople} onChange={handleInputChange} required />
-            <select name="preferredFoodType" value={requestDetails.preferredFoodType} onChange={handleInputChange}>
-              <option value="Any">Any</option>
-              <option value="Vegetarian">Vegetarian</option>
-              <option value="Non-Vegetarian">Non-Vegetarian</option>
-              <option value="Vegan">Vegan</option>
-            </select>
-          </div>
+            <div className="input-group">
+              <input type="text" name="streetAddress" placeholder="Street Address" value={requestDetails.streetAddress} onChange={handleInputChange} required />
+              <input type="text" name="city" placeholder="City" value={requestDetails.city} onChange={handleInputChange} required />
+              <input type="text" name="postalCode" placeholder="Postal Code" value={requestDetails.postalCode} onChange={handleInputChange} required />
+            </div>
 
-          <textarea name="requestReason" placeholder="Why do you need food assistance?" value={requestDetails.requestReason} onChange={handleInputChange} required></textarea>
+            <div className="input-group">
+              <input type="number" name="numberOfPeople" placeholder="Number of People" value={requestDetails.numberOfPeople} onChange={handleInputChange} required />
+              <select name="preferredFoodType" value={requestDetails.preferredFoodType} onChange={handleInputChange}>
+                <option value="Any">Any</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+              </select>
+            </div>
 
-          <div className="input-group">
-            <input type="date" name="requestDate" value={requestDetails.requestDate} onChange={handleInputChange} required />
-            <select name="deliveryPreference" value={requestDetails.deliveryPreference} onChange={handleInputChange}>
-              <option value="Delivery">Delivery</option>
-              <option value="Pickup">Pickup</option>
-            </select>
-          </div>
+            <textarea name="requestReason" placeholder="Why do you need food assistance?" value={requestDetails.requestReason} onChange={handleInputChange} required></textarea>
 
-          <button type="submit" className="submit-btn">Submit Request</button>
-        </form>
-      </div>
+            <div className="input-group">
+              <input type="date" name="requestDate" value={requestDetails.requestDate} onChange={handleInputChange} required />
+              <select name="deliveryPreference" value={requestDetails.deliveryPreference} onChange={handleInputChange}>
+                <option value="Delivery">Delivery</option>
+                <option value="Pickup">Pickup</option>
+              </select>
+            </div>
+
+            <button type="submit" className="submit-btn">Submit Request</button>
+          </form>
+        </div>
+      )}
 
       <h2 className="requests-heading">Submitted Requests</h2>
       <div className="requests-list">

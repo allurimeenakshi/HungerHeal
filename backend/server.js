@@ -37,6 +37,7 @@ mongoclient.connect().then((connectionObj) => {
     const donationsCollection = db.collection('donations');
     const requestsCollection = db.collection('requests');
     const feedbackCollection = db.collection('feedback');
+    const trackCollection = db.collection('track');
    
 
     // Share collection objects with the API
@@ -44,6 +45,7 @@ mongoclient.connect().then((connectionObj) => {
     app.set('donationsCollection', donationsCollection);
     app.set('requestsCollection', requestsCollection);
     app.set('feedbackCollection', feedbackCollection);
+    app.set('trackCollection', trackCollection);
     
 
     // Start the HTTP server if DB connection has succeeded
@@ -67,6 +69,10 @@ app.use('/request-api', requestApp);
 // Import feedbackApp
 const feedbackApp = require('./APIs/feedbackAPI');
 app.use('/feedback-api', feedbackApp);
+
+// Import trackApp
+// const trackApp = require('./APIs/trackAPI');
+// app.use('/track-api', trackApp);
 
 
 

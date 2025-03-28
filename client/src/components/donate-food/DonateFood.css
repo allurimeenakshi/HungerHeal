@@ -4,7 +4,25 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: #fef8f1;
+    background: linear-gradient(to bottom, #fffaf0, #ffcc80); 
+}
+
+/* Centered Donate Button */
+.donate-button {
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: 0.3s;
+}
+
+.donate-button:hover {
+    background-color: darkorange;
 }
 
 /* Form Section */
@@ -16,6 +34,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin: 20px auto;
 }
 
 .title {
@@ -24,12 +43,6 @@
     color: #e67e22;
     margin-bottom: 15px;
     text-transform: uppercase;
-}
-
-.message {
-    color: #27ae60;
-    font-weight: bold;
-    margin-bottom: 10px;
 }
 
 /* Form Styling */
@@ -48,12 +61,6 @@
     border-radius: 8px;
     font-size: 16px;
     outline: none;
-    transition: 0.3s;
-}
-
-.donate-form input:focus,
-.donate-form textarea:focus {
-    border-color: #d35400;
 }
 
 .submit-button {
@@ -64,12 +71,10 @@
     border-radius: 8px;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .submit-button:hover {
     background: #d35400;
-    transform: scale(1.05);
 }
 
 /* Past Donations Section */
@@ -98,38 +103,41 @@
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
-    transition: 0.3s;
     width: 280px;
+    position: relative;
 }
 
-.donation-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.status {
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-.pending {
-    color: #e67e22;
-}
-
-.completed {
-    color: #27ae60;
-}
-
-.no-donations {
-    color: gray;
-    font-style: italic;
+/* Request Button */
+.request-button {
+    background: #ff5722;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
     text-align: center;
+    display: block;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .donation-list {
-        flex-direction: column;
-        align-items: center;
-    }
+.request-button:hover {
+    background: #e64a19;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 5px;
+    padding: 8px 12px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }

@@ -1,7 +1,7 @@
-import React from "react";
+//import React from "react";
 import "./Home.css";
 import logo from "../../assets/Homebanner.png";
-import image1 from "../../assets/image1.png";
+import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -42,12 +42,12 @@ const Home = () => {
         </motion.div>
 
         <div className="about-content">
+          <motion.img src={image1} alt="Food Donation" className="about-image" />
           <motion.div className="about-text">
             <h2>Our Mission</h2>
             <p> HungerHeal is a non-profit platform dedicated to reducing food waste and ensuring surplus food reaches those in need. 
             We connect donors, such as restaurants and individuals, with NGOs that distribute food to the underprivileged.</p>
           </motion.div>
-          <motion.img src={image1} alt="Food Donation" className="about-image" />
         </div>
 
         <div className="about-content reverse">
@@ -66,7 +66,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 1 }}
         >
-          <h2>How HungerHeal Works</h2>
+          <h2>How HungerHeal Works?</h2>
           <ul>
             <li><strong>Step 1:</strong> Donors register and list their surplus food.</li>
             <li><strong>Step 2:</strong> NGOs browse available food and request pickup.</li>

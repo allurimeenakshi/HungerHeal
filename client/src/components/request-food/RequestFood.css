@@ -1,119 +1,170 @@
+/* General Styling */
 .request-food-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
-  background: #f5f5f5;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(to bottom, #fffaf0, #ffcc80); 
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Button Styling */
+.toggle-form-btn {
+  background: linear-gradient(90deg, #FFA726, #FFCC80);
+  color: #4E342E;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 8px rgba(255, 167, 38, 0.3);
+}
+
+.toggle-form-btn:hover {
+  background: linear-gradient(90deg, #FFB74D, #FFE0B2);
+  transform: translateY(-2px);
+}
+
+/* Request Form Card */
 .request-food-container {
-  max-width: 500px;
-  padding: 15px;
-  background: #ffffff;
-  border-radius: 6px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  background: #FFFFFF;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .form-heading {
-  text-align: center;
   font-size: 22px;
-  color: #333;
-  margin-bottom: 12px;
-}
-
-.response-message {
-  text-align: center;
-  color: green;
   font-weight: bold;
-  font-size: 14px;
+  margin-bottom: 15px;
+  color: #795548;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Form Inputs */
 .food-request-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 .input-group {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 12px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.input-group input, 
-.input-group select, 
-.food-request-form textarea {
-  flex: 1;
-  min-width: 47%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.food-request-form textarea {
+input, select, textarea {
   width: 100%;
-  min-height: 70px;
-  resize: none;
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 10px;
+  padding: 12px;
+  border: 2px solid #FFE0B2;
+  border-radius: 8px;
   font-size: 16px;
-  background: #4CAF50;
-  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #FFF3E0;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #FFAB40;
+  box-shadow: 0 0 5px rgba(255, 171, 64, 0.4);
+}
+
+textarea {
+  min-height: 90px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(90deg, #81C784, #A5D6A7);
+  color: #2E7D32;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 3px 8px rgba(129, 199, 132, 0.3);
 }
 
 .submit-btn:hover {
-  background: #45a049;
+  background: linear-gradient(90deg, #66BB6A, #C8E6C9);
+  transform: translateY(-2px);
 }
 
+/* Submitted Requests */
 .requests-heading {
-  font-size: 20px;
-  margin-top: 25px;
-  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #6D4C41;
+  text-transform: uppercase;
 }
 
+/* Requests Grid */
 .requests-list {
-  width: 90%;
-  max-width: 800px;
-  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
+/* Request Card Styling */
 .request-card {
-  background: #f9f9f9;
-  padding: 12px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: calc(50% - 15px); /* Two cards per row with gap */
-  font-size: 14px;
+  background: #FFFFFF;
+  width: 280px;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.request-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .request-card h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
-  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #795548;
 }
 
 .request-card p {
-  margin: 4px 0;
-  font-size: 13px;
-  color: #666;
+  font-size: 14px;
+  color: #6D4C41;
+  margin: 5px 0;
 }
 
-/* Make cards adjust for smaller screens */
-@media (max-width: 600px) {
-  .request-card {
-    width: 100%; /* Stack cards on smaller screens */
-  }
+/* No Requests Message */
+.no-requests {
+  font-size: 16px;
+  color: #8D6E63;
+  margin-top: 10px;
 }

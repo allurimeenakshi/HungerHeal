@@ -8,6 +8,7 @@ function DonateFood() {
     const [pickupAddress, setPickupAddress] = useState("");
     const [donations, setDonations] = useState([]);
     const [message, setMessage] = useState("");
+    const [showForm, setShowForm] = useState(false); // Toggle form visibility
 
     useEffect(() => {
         fetchDonations();
@@ -57,18 +58,25 @@ function DonateFood() {
 
     return (
         <div className="donate-food-page">
+            {/* Donate Food Button */}
+            <button className="donate-button" onClick={() => setShowForm(!showForm)}>
+                {showForm ? "Close Form" : "Donate Food"}
+            </button>
+
             {/* Donation Form Section */}
-            <div className="donate-food-container">
-                <h2 className="title">Donate Food</h2>
-                {message && <p className="message">{message}</p>}
-                <form className="donate-form" onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Food Name" value={foodName} onChange={(e) => setFoodName(e.target.value)} />
-                    <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-                    <input type="date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
-                    <textarea placeholder="Pickup Address" value={pickupAddress} onChange={(e) => setPickupAddress(e.target.value)}></textarea>
-                    <button type="submit" className="submit-button">Submit Donation</button>
-                </form>
-            </div>
+            {showForm && (
+                <div className="donate-food-container">
+                    <h2 className="title">Donate Food</h2>
+                    {message && <p className="message">{message}</p>}
+                    <form className="donate-form" onSubmit={handleSubmit}>
+                        <input type="text" placeholder="Food Name" value={foodName} onChange={(e) => setFoodName(e.target.value)} />
+                        <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+                        <input type="date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+                        <textarea placeholder="Pickup Address" value={pickupAddress} onChange={(e) => setPickupAddress(e.target.value)}></textarea>
+                        <button type="submit" className="submit-button">Submit Donation</button>
+                    </form>
+                </div>
+            )}
 
             {/* Past Donations Section */}
             <h2 className="donation-heading">Past Donations</h2>
@@ -85,6 +93,7 @@ function DonateFood() {
                             <p className={`status ${donation.status.toLowerCase()}`}>
                                 <strong>Status:</strong> {donation.status}
                             </p>
+                            <button className="request-button">Request</button>
                         </div>
                     ))
                 )}
