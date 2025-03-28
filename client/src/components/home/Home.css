@@ -1,13 +1,15 @@
-/* ====================== General Styling ====================== */
+/* Body Styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #F9F9F9, #FFF3E0); /* Light neutral gradient */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #fffaf0, #ffcc80); /* Light cream to soft orange */
     margin: 0;
     padding: 0;
     color: #333;
 }
 
 /* ====================== Home Section ====================== */
+
+/* Home Container */
 .home-container {
     display: flex;
     align-items: center;

@@ -1,49 +1,64 @@
-/* Auth Component Styles */
+
 .auth-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-  }
-  
-  .auth-form-container {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-  }
-  
-  .auth-tabs {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-  
-  .auth-tab {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    background: #ddd;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-  }
-  
-  .auth-tab.active {
-    background: #007bff;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .auth-tab:hover {
-    background: #0056b3;
-    color: white;
-  }
-  
-  .auth-forms {
-    margin-top: 1rem;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 50px; /* Adds space between animation and form */
+}
+
+.auth-left-panel {
+  flex: 1;
+  max-width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-left: -40px; /* Slightly move animation left */
+}
+
+.lottie-animation {
+  width: 60%;
+  max-width: 200px; /* Reduce animation size */
+  height: auto;
+  transform: translateX(-10px);
+}
+
+.auth-form-container {
+  flex: 1;
+  max-width: 30%;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 50px; /* Creates more space between animation and form */
+}
+
+
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.auth-tab {
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px; /* Reduced font size */
+  border: none;
+  background: transparent;
+  color: #333;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.auth-tab.active {
+  border-bottom: 2px solid #ff6600;
+  color: #ff6600;
+}
+
+.auth-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
