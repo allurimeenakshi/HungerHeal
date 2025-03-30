@@ -96,7 +96,7 @@ const Feedback = () => {
 
       {/* Opinions Section - Completely Outside the Form */}
       <div className="opinions-section">
-        <h2 className="opinions-heading">Opinions</h2>
+        <h2 className="opinions-heading">Reviews</h2>
         <div className="feedback-list">
           {feedbackList.map((item, index) => (
             <div key={index} className="feedback-card">
