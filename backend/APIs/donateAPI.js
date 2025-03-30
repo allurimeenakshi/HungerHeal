@@ -28,8 +28,8 @@ donateApp.post("/donate", expressAsyncHandler(async (req, res) => {
         return res.status(500).json({ message: "Database error" });
     }
 
-    const { foodName, quantity, expiryDate, pickupAddress } = req.body;
-    if (!foodName || !quantity || !expiryDate || !pickupAddress) {
+    const { foodName, quantity, expiryDate, pickupAddress, foodType, pickupTime, notes, contactNumber } = req.body;
+    if (!foodName || !quantity || !expiryDate || !pickupAddress || !foodType || !pickupTime || !contactNumber) {
         return res.status(400).json({ message: "All fields are required" });
     }
 
@@ -38,11 +38,21 @@ donateApp.post("/donate", expressAsyncHandler(async (req, res) => {
         quantity,
         expiryDate,
         pickupAddress,
+        foodType,
+        pickupTime,
+        notes: notes || "", // Optional field
+        contactNumber, // Renamed to match frontend
         status: "Pending",
         createdAt: new Date(),
     };
 
-    await donationsCollection.insertOne(newDonation);
+    console.log("New Donation:", newDonation);
+
+    const result = await donationsCollection.insertOne(newDonation);
+    if (!result.acknowledged) {
+        return res.status(500).json({ message: "Failed to submit donation" });
+    }
+
     res.status(201).json({ message: "Food donation submitted successfully!" });
 }));
 

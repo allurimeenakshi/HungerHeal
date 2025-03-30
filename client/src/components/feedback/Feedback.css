@@ -5,49 +5,134 @@
     padding: 20px;
   }
   
+
+/* Feedback Form Heading */
+.feedback-form-container h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ff5315;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Stylish Underline Effect */
+.feedback-form-container h1::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .feedback-form-container h1 {
+    font-size: 22px;
+  }
+}
+
+
+/* Feedback Form Container */
+.feedback-form-container {
+  max-width: 500px;
+  background: #ffdab3;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  margin: 30px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.feedback-form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Heading */
+.feedback-form-container h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  border-bottom: 3px solid #ff8f3a;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+/* Feedback Form */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Input & Textarea */
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: #ff8f3a;
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(255, 143, 58, 0.4);
+}
+
+/* Button */
+.feedback-form button {
+  background-color: #ff8f3a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.feedback-form button:hover {
+  background-color: #d87423;
+  transform: scale(1.05);
+}
+
+/* Response Message */
+.response-message {
+  color: #915d10;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
   .feedback-form-container {
-    max-width: 500px; /* Decreased from full width */
-    background: #f5f5f5;
-    padding: 15px; /* Reduced padding */
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
-    text-align: center;
-    margin: 20px auto; /* Centered with adjusted margin */
+      max-width: 90%;
+      padding: 20px;
   }
-  
-  .feedback-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+  .feedback-form-container h2 {
+      font-size: 18px;
   }
-  
-  .feedback-form input,
-  .feedback-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .feedback-form button {
-    background-color: #a75f28;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .feedback-form button:hover {
-    background-color: #955d09;
-  }
-  
-  .response-message {
-    color: rgb(140, 116, 43);
-    font-weight: bold;
-  }
+}
+
   
   /* Opinions Section */
   .opinions-section {
@@ -55,13 +140,44 @@
     text-align: center;
   }
   
+  /* Opinions Heading */
+.opinions-heading {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ff5e00;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Stylish Underline */
+.opinions-heading::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff8f3a, #ff6f00);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Soft Shadow Effect */
+.opinions-heading:hover {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
   .opinions-heading {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin-bottom: 15px;
+    font-size: 22px;
   }
+}
+
   
   /* Feedback Cards in Grid Layout */
   .feedback-list {
@@ -71,37 +187,82 @@
     justify-content: center;
   }
   
- /* Feedback Card Layout - Each Element on a New Line */
+/* Feedback Card */
 .feedback-card {
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff9f2, #ffe0b3); /* Soft warm gradient */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #ff8f3a; /* Accent color */
 }
 
-/* Name should be first */
+/* Hover Effect */
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid #d76c00; /* Darker accent on hover */
+}
+
+/* Name */
 .feedback-name {
   font-weight: bold;
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon for Name */
+.feedback-name::before {
+  content: "👤";
   font-size: 1rem;
-  margin-bottom: 8px;
-  display: block;
 }
 
-/* Email should be under the name */
+/* Email */
 .feedback-email {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 10px;
-  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* Feedback message should be at the bottom */
+/* Icon for Email */
+.feedback-email::before {
+  content: "📧";
+  font-size: 1rem;
+}
+
+/* Feedback Message */
 .feedback-message {
-  font-size: 14px;
-  display: block;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #444;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .feedback-card {
+      padding: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .feedback-card {
+      padding: 12px;
+      border-left: 3px solid #ff8f3a;
+  }
 }
 
   

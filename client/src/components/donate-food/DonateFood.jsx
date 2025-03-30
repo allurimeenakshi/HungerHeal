@@ -6,9 +6,13 @@ function DonateFood() {
     const [quantity, setQuantity] = useState("");
     const [expiryDate, setExpiryDate] = useState("");
     const [pickupAddress, setPickupAddress] = useState("");
+    const [foodType, setFoodType] = useState("Vegetarian");
+    const [pickupTime, setPickupTime] = useState("");
+    const [notes, setNotes] = useState("");
+    const [contactNumber, setContactNumber] = useState("");
     const [donations, setDonations] = useState([]);
     const [message, setMessage] = useState("");
-    const [showForm, setShowForm] = useState(false); // Toggle form visibility
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         fetchDonations();
@@ -27,12 +31,12 @@ function DonateFood() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (!foodName || !quantity || !expiryDate || !pickupAddress) {
-            setMessage("Please fill all fields!");
+        if (!foodName || !quantity || !expiryDate || !pickupAddress || !contactNumber || !pickupTime) {
+            setMessage("Please fill all required fields!");
             return;
         }
 
-        const newDonation = { foodName, quantity, expiryDate, pickupAddress };
+        const newDonation = { foodName, quantity, expiryDate, pickupAddress, foodType, pickupTime, notes, contactNumber };
 
         try {
             const response = await fetch("http://localhost:5000/donate-api/donate", {
@@ -44,7 +48,7 @@ function DonateFood() {
             if (!response.ok) throw new Error("Failed to submit donation");
 
             setMessage("Food donation submitted successfully!");
-            fetchDonations(); // Refresh donations
+            fetchDonations();
         } catch (error) {
             setMessage("Error submitting donation");
             console.error("Error:", error);
@@ -54,16 +58,18 @@ function DonateFood() {
         setQuantity("");
         setExpiryDate("");
         setPickupAddress("");
+        setFoodType("Vegetarian");
+        setPickupTime("");
+        setNotes("");
+        setContactNumber("");
     };
 
     return (
         <div className="donate-food-page">
-            {/* Donate Food Button */}
             <button className="donate-button" onClick={() => setShowForm(!showForm)}>
                 {showForm ? "Close Form" : "Donate Food"}
             </button>
 
-            {/* Donation Form Section */}
             {showForm && (
                 <div className="donate-food-container">
                     <h2 className="title">Donate Food</h2>
@@ -72,13 +78,23 @@ function DonateFood() {
                         <input type="text" placeholder="Food Name" value={foodName} onChange={(e) => setFoodName(e.target.value)} />
                         <input type="number" placeholder="Quantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
                         <input type="date" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
-                        <textarea placeholder="Pickup Address" value={pickupAddress} onChange={(e) => setPickupAddress(e.target.value)}></textarea>
+                        <textarea placeholder="Enter full address with street, city & landmarks" value={pickupAddress} onChange={(e) => setPickupAddress(e.target.value)}></textarea>
+                        <select value={foodType} onChange={(e) => setFoodType(e.target.value)}>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Non-Vegetarian">Non-Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                        </select>
+                        <label>
+                            Preferred Pickup Time:
+                            <input type="time" value={pickupTime} onChange={(e) => setPickupTime(e.target.value)} />
+                        </label>
+                        <input type="tel" placeholder="Contact Number" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
+                        <textarea placeholder="Additional Notes" value={notes} onChange={(e) => setNotes(e.target.value)}></textarea>
                         <button type="submit" className="submit-button">Submit Donation</button>
                     </form>
                 </div>
             )}
 
-            {/* Past Donations Section */}
             <h2 className="donation-heading">Past Donations</h2>
             <div className="donation-list">
                 {donations.length === 0 ? (
@@ -90,9 +106,10 @@ function DonateFood() {
                             <p><strong>Quantity:</strong> {donation.quantity}</p>
                             <p><strong>Expiry Date:</strong> {donation.expiryDate}</p>
                             <p><strong>Pickup Address:</strong> {donation.pickupAddress}</p>
-                            <p className={`status ${donation.status.toLowerCase()}`}>
-                                <strong>Status:</strong> {donation.status}
-                            </p>
+                            <p><strong>Food Type:</strong> {donation.foodType}</p>
+                            <p><strong>Preferred Pickup Time:</strong> {donation.pickupTime || "Anytime"}</p>
+                            <p><strong>Contact:</strong> {donation.contactNumber}</p>
+                            <p><strong>Notes:</strong> {donation.notes || "No additional notes"}</p>
                             <button className="request-button">Request</button>
                         </div>
                     ))

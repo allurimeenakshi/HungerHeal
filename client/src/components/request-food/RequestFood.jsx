@@ -18,7 +18,7 @@ const RequestFood = () => {
 
   const [requestsList, setRequestsList] = useState([]);
   const [responseMessage, setResponseMessage] = useState("");
-  const [showForm, setShowForm] = useState(false); // Toggle state for form visibility
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     loadRequests();
@@ -51,7 +51,7 @@ const RequestFood = () => {
 
       setResponseMessage("Your food request has been successfully submitted!");
       loadRequests();
-      setShowForm(false); // Hide form after submission
+      setShowForm(false);
     } catch (error) {
       setResponseMessage("Error submitting your request.");
       console.error("Error:", error);
@@ -70,6 +70,11 @@ const RequestFood = () => {
       requestDate: "",
       deliveryPreference: "Delivery",
     });
+  };
+
+  const handleDonate = (req) => {
+    console.log(`Donating to ${req.fullName}`);
+    // Integrate donation logic here (e.g., API call)
   };
 
   return (
@@ -137,6 +142,7 @@ const RequestFood = () => {
               <p><strong>Reason:</strong> {req.requestReason}</p>
               <p><strong>Request Date:</strong> {req.requestDate}</p>
               <p><strong>Delivery:</strong> {req.deliveryPreference}</p>
+              <button className="donate-btn" onClick={() => handleDonate(req)}>Donate</button>
             </div>
           ))
         )}

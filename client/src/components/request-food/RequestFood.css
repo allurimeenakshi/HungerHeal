@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(to bottom, #fffaf0, #ffcc80); 
+  background: linear-gradient(to bottom, #fffaf0, #ffcc80);
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 }
@@ -15,14 +15,14 @@
   background: linear-gradient(90deg, #FFA726, #FFCC80);
   color: #4E342E;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 20px;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 3px 8px rgba(255, 167, 38, 0.3);
+  box-shadow: 0 3px 6px rgba(255, 167, 38, 0.25);
 }
 
 .toggle-form-btn:hover {
@@ -32,29 +32,29 @@
 
 /* Request Form Card */
 .request-food-container {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   background: #FFFFFF;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  animation: fadeIn 0.4s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .form-heading {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 15px;
-  color: #795548;
+  color: #6D4C41;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -70,13 +70,13 @@
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 input, select, textarea {
   width: 100%;
   padding: 12px;
-  border: 2px solid #FFE0B2;
+  border: 2px solid #FFD180;
   border-radius: 8px;
   font-size: 16px;
   outline: none;
@@ -86,11 +86,12 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
   border-color: #FFAB40;
-  box-shadow: 0 0 5px rgba(255, 171, 64, 0.4);
+  box-shadow: 0 0 6px rgba(255, 171, 64, 0.4);
 }
 
 textarea {
   min-height: 90px;
+  resize: vertical;
 }
 
 /* Submit Button */
@@ -98,13 +99,13 @@ textarea {
   background: linear-gradient(90deg, #81C784, #A5D6A7);
   color: #2E7D32;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   padding: 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 3px 8px rgba(129, 199, 132, 0.3);
+  box-shadow: 0 3px 6px rgba(129, 199, 132, 0.3);
 }
 
 .submit-btn:hover {
@@ -115,7 +116,7 @@ textarea {
 /* Submitted Requests */
 .requests-heading {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 20px;
   color: #6D4C41;
   text-transform: uppercase;
@@ -132,39 +133,88 @@ textarea {
 
 /* Request Card Styling */
 .request-card {
-  background: #FFFFFF;
-  width: 280px;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #fff9f2, #ffe0b3);
+  width: 300px;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 5px 14px rgba(255, 152, 0, 0.25);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s ease-in-out;
+  border-left: 6px solid #ff9800;
 }
 
 .request-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(255, 152, 0, 0.35);
 }
 
 .request-card h3 {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 750;
   margin-bottom: 10px;
-  color: #795548;
+  color: #e65100;
+  align-self: flex-start;
 }
 
 .request-card p {
-  font-size: 14px;
-  color: #6D4C41;
-  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 550;
+  color: #6d4c41;
+  margin: 6px 0;
+  align-self: flex-start;
 }
+
+/* Donate Button */
+.donate-btn {
+  background: linear-gradient(90deg, #ff774e, #d84315);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 14px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.35);
+  align-self: center;
+}
+
+.donate-btn:hover {
+  background: linear-gradient(90deg, #f57c00, #ffcc80);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(255, 152, 0, 0.4);
+}
+
+
 
 /* No Requests Message */
 .no-requests {
   font-size: 16px;
   color: #8D6E63;
   margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .request-food-container {
+    padding: 20px;
+  }
+
+  .request-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .toggle-form-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
 }

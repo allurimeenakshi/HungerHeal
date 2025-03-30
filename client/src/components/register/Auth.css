@@ -9,7 +9,7 @@
 
 .auth-left-panel {
   flex: 1;
-  max-width: 40%;
+  max-width: 27%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@
 
 .auth-form-container {
   flex: 1;
-  max-width: 30%;
+  max-width: 40%;
   background: white;
   padding: 30px;
   border-radius: 10px;
