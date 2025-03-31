@@ -39,7 +39,7 @@ const Home = () => {
           </button>
 
           <div className="button-group">
-            <button className="donate-btn">
+            <button className="donated-btn">
               <Link to="donate-food">Donate Food</Link>
             </button>
             <button className="request-btn">
@@ -112,7 +112,7 @@ const Home = () => {
         {/* Contact Section */}
         <div className="contact-container">
           <h2>Contact Us</h2>
-          <p>If you have any questions or want to collaborate, reach out to us:</p>
+          <p>If you have any questions or want to collaborate, reach out to us</p>
           <p className="contact-email">
             Email: <a href="mailto:support@hungerheal.org">support@hungerheal.org</a>
           </p>

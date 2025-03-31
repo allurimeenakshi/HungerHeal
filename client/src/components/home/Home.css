@@ -1,5 +1,3 @@
-
-
 /* Body Styling */
 body {
     font-family: Arial, sans-serif;
@@ -111,7 +109,7 @@ body {
     color: inherit;
 }
 
-.donate-btn, .request-btn {
+.donated-btn, .request-btn {
     background: linear-gradient(90deg, #FF9800, #F57C00);
     color: #fff;
     width: 180px;

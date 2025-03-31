@@ -23,11 +23,6 @@ const Feedback = () => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new Error("Invalid JSON response from server");
-      }
-
       const data = await response.json();
       setFeedbackList(data);
     } catch (error) {
@@ -42,7 +37,7 @@ const Feedback = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/feedback-api/submit", {
+      const response = await fetch("http://localhost:5000/feedback-api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(feedbackData),
@@ -94,7 +89,6 @@ const Feedback = () => {
         </form>
       </div>
 
-      {/* Opinions Section - Completely Outside the Form */}
       <div className="opinions-section">
         <h2 className="opinions-heading">Reviews</h2>
         <div className="feedback-list">
