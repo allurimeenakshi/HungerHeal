@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Track.css";
 
 const MapComponent = () => {
@@ -47,7 +47,7 @@ const MapComponent = () => {
 
    
     loadScript(
-      "https://maps.gomaps.pro/maps/api/js?key=AlzaSytDG7xEKGYtc8a07v_2vNdkilEieqw40Kb&libraries=places&callback=initMap"
+      "https://maps.gomaps.pro/maps/api/js?key=AlzaSyTpbSBNrsYTnIqzJ7gn89INbTW5eXv--zu&libraries=places&callback=initMap"
     );
   }, []);
 
@@ -59,4 +59,4 @@ const MapComponent = () => {
   );
 };
 
-export default MapComponent;
+export default MapComponent
