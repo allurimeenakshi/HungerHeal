@@ -20,7 +20,7 @@ function DonateFood() {
 
     const fetchDonations = async () => {
         try {
-            const response = await fetch("http://localhost:5000/donate-api/donations");
+            const response = await fetch("https://hungerheal.onrender.com/donate-api/donations");
             if (!response.ok) throw new Error("Failed to fetch donations");
             const data = await response.json();
             setDonations(data);
@@ -39,7 +39,7 @@ function DonateFood() {
         const newDonation = { foodName, quantity, expiryDate, pickupAddress, foodType, pickupTime, notes, contactNumber };
 
         try {
-            const response = await fetch("http://localhost:5000/donate-api/donate", {
+            const response = await fetch("https://hungerheal.onrender.com/donate-api/donate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newDonation),

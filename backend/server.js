@@ -10,7 +10,8 @@ const cors = require('cors');
 
 const allowedOrigins = [
     'http://localhost:5173',  
-    'http://localhost:5000',
+    'https://hungerheal.onrender.com',
+    'https://localhost:5000',
     process.env.FRONTEND_URL // Add your deployed frontend URL in .env
 ];
 

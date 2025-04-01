@@ -8,7 +8,7 @@ function UserLoginStore({ children }) {
 
   async function loginUser(userCred) {
     try {
-      let res = await fetch(`http://localhost:5000/user-api/login`, {
+      let res = await fetch(`https://hungerheal.onrender.com/user-api/login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(userCred),

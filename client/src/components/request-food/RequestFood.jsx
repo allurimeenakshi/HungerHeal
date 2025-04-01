@@ -26,7 +26,7 @@ const RequestFood = () => {
 
   const loadRequests = async () => {
     try {
-      const response = await fetch("http://localhost:5000/request-api/requests");
+      const response = await fetch("https://hungerheal.onrender.com/request-api/requests");
       const data = await response.json();
       setRequestsList(data);
     } catch (error) {
@@ -41,7 +41,7 @@ const RequestFood = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/request-api/request", {
+      const response = await fetch("https://hungerheal.onrender.com/request-api/request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestDetails),
